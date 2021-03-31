@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+.about-detail{
+	width: 650px;
+	height: 700px;
+}
+#more {display: none;}
+#myBtn{
+  height: 40px;
+  width: 170px;
+  background-color: red;
+  border: none;
+  color: white;
+  font-size: 20px;
+}
+.right{
+  width: 40%;
+  height: 100%;
+  float: right;
+  padding: 100px 15px;
+}
+.left{
+  height: 100%;
+  width: 55%;
+  float: left;
+  padding: 0px 50px;
+}
+
+.right1{
+  width: 50%;
+  height: 100%;
+  float: right;
+  text-align: center;
+}
+.left1{
+  height: 100%;
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+.img{
+  height: 200px;
+  width: 320px;
+  float: right;
+  margin: 20px 20px;
+}
+img{
+  width: 100%;
+  height: 100%;
+}
+
+.bigimg{
+  height: 526.5px;
+  width: 936px;
+}
+
+#img1:hover {opacity: 0.7;}
+#img2:hover {opacity: 0.7;}
+#img3:hover {opacity: 0.7;}
+#img4:hover {opacity: 0.7;}
+
+/*Chinh background 4 tab*/
+#Home {background-image: url("C:/Users/dell/Desktop/temmo.png");font-size: 20px;}
+#News {
+  background-image: url("C:/Users/dell/Desktop/yasuo.jpg");
+}
+#Contact {background-image: url("C:/Users/dell/Desktop/zed.jpg");}
+#About {background-image: url("C:/Users/dell/Desktop/akali.jpg");}
+
+#About button{
+  height: 40px;
+  width: 170px;
+  color: white;
+  font-size: 20px;
+  background-color: orange;
+  border: none;
+  margin-top: 50px;
+}
+/*---------------------------------------------------------------------------------*/
+
+.ava{
+  height: 300px;
+  width: 300px;
+  margin: 150px auto;
+}
+.ava img{
+  border-radius: 100%;
+}
+</style>
+</head>
+<body>
+
+<button class="tablink" onclick="openPage('Home', this, 'red')" id="defaultOpen">ABOUT ME</button>
+<button class="tablink" onclick="openPage('News', this, 'blue')">MY WORKS</button>
+<button class="tablink" onclick="openPage('Contact', this, 'green')">JOB EXPERIENCES</button>
+<button class="tablink" onclick="openPage('About', this, 'orange')">CONTACT</button>
+
+<div id="Home" class="tabcontent">
+	<div class="about-detail"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+	<button onclick="myFunction()" id="myBtn">Read more</button></div>
+</div>
+
+<div id="News" class="tabcontent">
+  <div class="left">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta</span></p>
+    <div class="bigimg" id="bigImg"><img id="img"></div>
+  </div>
+  <div class="right">  
+    <!-- Tab2 chinh thumbnail -->
+    <div class="img"><img src="C:/Users/dell/Desktop/temmo.png" alt="" id="img1"></div>
+    <div class="img"><img src="C:/Users/dell/Desktop/temmo.png" alt="" id="img2"></div>
+    <div class="img"><img src="C:/Users/dell/Desktop/temmo.png" alt="" id="img3"></div>
+    <div class="img"><img src="C:/Users/dell/Desktop/temmo.png" alt="" id="img4"></div>
+    <!-- ............................. -->
+  </div>
+</div>
+
+<div id="Contact" class="tabcontent">
+</div>
+
+<div id="About" class="tabcontent">
+  <!-- tab 4 chinh anh va link ava -->
+  <div class="left1"><div class="ava"><img src="C:/Users/dell/Desktop/temmo.png" alt="">
+    <button onclick="window.location.href='https://www.facebook.com/helios170599'">Facebook</button></div></div>
+  <div class="right1"><div class="ava"><img src="C:/Users/dell/Desktop/temmo.png" alt="">
+    <button onclick="window.location.href='https://www.facebook.com/helios170599'">Behance</button></div></div>
+    <!-- -------------------------------------------------------- -->
+</div>
+
+<script>
+var bigImg = document.getElementById("bigImg");
+var img1 = document.getElementById("img1");
+var img2 = document.getElementById("img2");
+var img3 = document.getElementById("img3");
+var img4 = document.getElementById("img4");
+var modalImg = document.getElementById("img");
+// Chinh anh trinh chieu
+img1.onclick = function(){
+  bigImg.style.display = "block";
+  modalImg.src = "C:/Users/dell/Desktop/yasuo.jpg";
+}
+img2.onclick = function(){
+  bigImg.style.display = "block";
+  modalImg.src = "C:/Users/dell/Desktop/yasuo1.jpg";
+}
+img3.onclick = function(){
+  bigImg.style.display = "block";
+  modalImg.src = "C:/Users/dell/Desktop/zed.jpg";
+}
+img4.onclick = function(){
+  bigImg.style.display = "block";
+  modalImg.src = "C:/Users/dell/Desktop/akali.jpg";
+}
+// --------------------------------------------------
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less";
+    moreText.style.display = "inline";
+  }
+}
+</script>
+   
+</body>
+</html> 
